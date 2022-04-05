@@ -1,0 +1,45 @@
+<div>
+  <p>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <mat-icon>library_books</mat-icon>
+        <span>Có {{books.length}} quyển sách</span>
+        <span class="example-spacer"></span>
+        <button mat-button routerLink="create-book">
+          <mat-icon>create_new_folder</mat-icon>
+          Thêm mới
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </p>
+</div>
+<br><br>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tác giả</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books; let i = index" style="align-items: center">
+      <td>{{i+1}}</td>
+      <td><a style="color: blue; cursor: pointer" (click)="openDialogDetail(book.id)">{{book.title}}</a> </td>
+      <td>{{book.author}}</td>
+      <td>
+        <a class="btn btn-warning"  role="button" style="margin-right: 10px" routerLink="edit-book/{{book.id}}">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <span>| </span>
+        <button class="btn btn-danger" (click)="openDialogDelete(book.id)" >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

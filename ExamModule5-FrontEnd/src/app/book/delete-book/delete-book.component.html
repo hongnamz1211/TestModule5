@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row" style="margin-top: 20px">
+    <div class="col-12">
+      <mat-card style="margin: 50px 0">
+        <h2>Xóa sách</h2>
+        <p>Tên sách: {{book.title}}</p>
+        <p>Tác giả: {{book.author}}</p>
+        <p>Mô tả</p>
+        <p>{{book.description}}</p>
+        <div style="margin-left: 500px">
+          <button class="btn btn-warning" mat-dialog-close  style="margin-right: 10px">Thoát</button>
+          <button class="btn btn-danger" (click)="deleteBook()">Xóa sách</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
